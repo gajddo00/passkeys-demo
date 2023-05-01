@@ -1,0 +1,9 @@
+//
+//  Production.xcconfig
+//  workout-stats
+//
+//  Created by Dominika Gajdová on 02.04.2023.
+//
+
+APP_BUNDLE_NAME = Workout_Stats
+APP_BUNDLE_IDENTIFIER = com.bonesystems.workout-stats
