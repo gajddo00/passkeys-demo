@@ -3,6 +3,16 @@
     {
       "filename" : "glasses-icon.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "glasses-icon-light.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

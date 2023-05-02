@@ -50,6 +50,7 @@ private extension PostView {
                     Image(RImage.upvoteIcon.name)
                     Text("\(post.upVotesCount)")
                         .font(.caption)
+                        .foregroundColor(post.didUpvote ? Color.pink : Color.foregroundColor)
                         .bold()
                 }
             }
@@ -61,6 +62,7 @@ private extension PostView {
                     Image(systemSymbol: .chevronDown)
                     Text("\(post.downVotesCount)")
                         .font(.caption)
+                        .foregroundColor(post.didDownvote ? Color.pink : Color.foregroundColor)
                         .bold()
                 }
             }

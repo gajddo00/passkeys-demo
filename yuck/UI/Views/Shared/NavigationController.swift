@@ -10,7 +10,7 @@ import UIKit
 final class NavigationController: UINavigationController {
     private let navigationBarAppearance: UINavigationBarAppearance = {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor.white
+        appearance.backgroundColor = UIColor.backgroundColor
         appearance.shadowColor = .clear
         appearance.setBackIndicatorImage(UIImage(systemName: "chevron.left"), transitionMaskImage: UIImage(systemName: "chevron.left"))
         return appearance
@@ -39,7 +39,5 @@ private extension NavigationController {
         navigationBar.standardAppearance = navigationBarAppearance
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationBar.compactAppearance = navigationBarAppearance
-                
-        overrideUserInterfaceStyle = .light
     }
 }

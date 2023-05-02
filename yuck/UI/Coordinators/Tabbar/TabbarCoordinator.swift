@@ -49,6 +49,7 @@ private extension TabbarCoordinator {
 
         tabBarController.tabBar.backgroundImage = UIImage()
         tabBarController.tabBar.shadowImage = UIImage()
+        tabBarController.tabBar.backgroundColor = UIColor.backgroundColor
 
         return tabBarController
     }

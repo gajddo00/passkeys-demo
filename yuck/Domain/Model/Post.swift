@@ -15,18 +15,23 @@ struct Post {
     let distanceInKm: Float
     var upVotesCount: Int
     var downVotesCount: Int
-    var didVote: Bool = false
+    var didUpvote: Bool = false
+    var didDownvote: Bool = false
+    
+    var didVote: Bool {
+        didUpvote || didDownvote
+    }
     
     mutating func upvote() {
         if !didVote {
-            didVote = true
+            didUpvote = true
             upVotesCount += 1
         }
     }
     
     mutating func downvote() {
         if !didVote {
-            didVote = true
+            didDownvote = true
             downVotesCount -= 1
         }
     }
