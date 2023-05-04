@@ -40,7 +40,8 @@ extension OnboardingCoordinator: EventEmitting {
 
 extension OnboardingCoordinator: NavigationControllerCoordinator {
     func start(presentationType: PresentationType) {
-        navigationController.viewControllers = [makeWelcomeScreen()]
+        // navigationController.viewControllers = [makeWelcomeScreen()]
+        navigationController.viewControllers = [makeSignUpScreen()]
     }
 }
 
@@ -48,9 +49,13 @@ extension OnboardingCoordinator: OnboardingFactoring {
     func handle(event: WelcomeStore.Event) {
         switch event {
         case .didFinish:
-            // for now
-            UserDefaultsProvider.welcomeScreenDisplayed = true
-            eventSubject.send(.didFinish(self))
+            // UserDefaultsProvider.welcomeScreenDisplayed = true
+            // eventSubject.send(.didFinish(self))
+            show(viewController: makeSignUpScreen(), type: .replace())
         }
+    }
+    
+    func handle(event: SignUpStore.Event) {
+        
     }
 }

@@ -10,9 +10,13 @@ import Foundation
 struct Configuration: Decodable {
     private enum CodingKeys: String, CodingKey {
         case sceneManifest = "UIApplicationSceneManifest"
+        case authDomain = "APP_AUTH_DOMAIN"
+        case apiBaseUrl = "API_BASE_URL"
     }
     
     let sceneManifest: SceneManifest?
+    let authDomain: String
+    let apiBaseUrl: String
 }
 
 // MARK: Static properties

@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "ios-networking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/strvcom/ios-networking/",
+      "state" : {
+        "revision" : "4b0249d75a75f5ccdac341ddf8ee8eb8a5abb362",
+        "version" : "0.0.3"
+      }
+    },
+    {
       "identity" : "r.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mac-cain13/R.swift",

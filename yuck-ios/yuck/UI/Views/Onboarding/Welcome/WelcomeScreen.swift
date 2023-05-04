@@ -21,7 +21,12 @@ struct WelcomeScreen: View {
 extension WelcomeScreen {
     var body: some View {
         ZStack(alignment: .center) {
-            Image(RImage.welcomeBackground.name)
+            Color.grayColor
+                .ignoresSafeArea()
+            
+            Image(RImage.appIcon.name)
+                .resizable()
+                .scaledToFit()
             
             content()
         }
@@ -38,19 +43,9 @@ private extension WelcomeScreen {
             Button {
                 store.send(action: .didTapWelcome)
             } label: {
-                HStack(alignment: .center) {
-                    Text(RString.welcomeTitle())
-                        .font(.title2)
-                    
-                    Image(systemSymbol: .chevronRight)
-                        .font(.body)
-                        .offset(y: 1.5)
-                }
+                Text(RString.welcomeTitle())
             }
-            .padding(.horizontal, 50)
-            .padding(.vertical, 30)
-            .foregroundColor(.black)
-            .background(.white)
+            .primaryButtonWhite()
         }
     }
 }

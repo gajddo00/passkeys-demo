@@ -6,9 +6,23 @@
   
 */
 
-"welcome.title" = "Welcome";
+"general.name" = "Yuck!";
+"general.username" = "Username";
 
+// MARK: Tab
 "tab.feed" = "Tea";
 "tab.user" = "You";
 
+// MARK: Welcome
+"welcome.title" = "Welcome!";
+
+// MARK: Sign up
+"signup.button.title" = "Sign me up!";
+"signup.username.title" = "Pick a username that will best describe you.";
+"signup.username.tip" = "Tip: Pick a totally random thing that comes to your mind. Life is too short to be thinking about usernames. You can change it any time later.";
+"signup.emoji.title" = "Pick an emoji you can relate to.";
+
+
+// MARK: Feed
 "feed.title" = "Feed";
+

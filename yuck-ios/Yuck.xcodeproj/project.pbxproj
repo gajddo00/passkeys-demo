@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD142CB92A023C4E00C8040A /* FittedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD142CB82A023C4E00C8040A /* FittedScrollView.swift */; };
 		DD1D83DB29FFD1E200DE8B68 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = DD1D83DA29FFD1E200DE8B68 /* RswiftLibrary */; };
 		DD1D83E129FFDA8000DE8B68 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = DD1D83E029FFDA8000DE8B68 /* SFSafeSymbols */; };
 		DD1D83E529FFDB7100DE8B68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1D83E429FFDB7100DE8B68 /* NavigationController.swift */; };
@@ -26,6 +27,14 @@
 		DD1D841129FFF5D500DE8B68 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1D841029FFF5D500DE8B68 /* Post.swift */; };
 		DD1D841429FFF74000DE8B68 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1D841329FFF74000DE8B68 /* PostView.swift */; };
 		DD1D841729FFF81100DE8B68 /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1D841629FFF81100DE8B68 /* View+FirstAppear.swift */; };
+		DD4A11772A012DFD004C765F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A11762A012DFD004C765F /* AuthenticationService.swift */; };
+		DD4A117A2A012E0B004C765F /* AuthenticationServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A11792A012E0B004C765F /* AuthenticationServicing.swift */; };
+		DD4A117D2A013153004C765F /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = DD4A117C2A013153004C765F /* Networking */; };
+		DD4A11802A01317E004C765F /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A117F2A01317E004C765F /* AuthenticationRouter.swift */; };
+		DD4A11862A013241004C765F /* SignUpBeginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A11852A013241004C765F /* SignUpBeginRequest.swift */; };
+		DD4A11892A0134AB004C765F /* SignUpBeginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A11882A0134AB004C765F /* SignUpBeginResponse.swift */; };
+		DD4A118D2A013720004C765F /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A118C2A013720004C765F /* SignUpScreen.swift */; };
+		DD4A11902A013731004C765F /* SignUpStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A118F2A013731004C765F /* SignUpStore.swift */; };
 		DD55F3E729D98B5E000EF8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55F3E629D98B5E000EF8AF /* AppDelegate.swift */; };
 		DD55F3E929D98B5E000EF8AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55F3E829D98B5E000EF8AF /* SceneDelegate.swift */; };
 		DD55F3F029D98B5E000EF8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD55F3EF29D98B5E000EF8AF /* Assets.xcassets */; };
@@ -63,6 +72,12 @@
 		DD55F46129D99E8A000EF8AF /* SubscriptionCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55F46029D99E8A000EF8AF /* SubscriptionCancellable.swift */; };
 		DD55F46329D9A08C000EF8AF /* TabbarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD55F46229D9A08C000EF8AF /* TabbarControllerCoordinator.swift */; };
 		DD697C9C29FFD1230010C152 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD697C9B29FFD1230010C152 /* Resources.swift */; };
+		DDBF77A92A03EA540087D3F5 /* SignUpFinishRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF77A82A03EA540087D3F5 /* SignUpFinishRequest.swift */; };
+		DDCE0AF42A01865800EC15EA /* PrimaryButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE0AF32A01865800EC15EA /* PrimaryButtonModifier.swift */; };
+		DDCE0AF62A01892F00EC15EA /* PrimaryTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE0AF52A01892F00EC15EA /* PrimaryTextFieldModifier.swift */; };
+		DDCE0AF92A018BCA00EC15EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE0AF82A018BCA00EC15EA /* Constants.swift */; };
+		DDCE0B002A018C3F00EC15EA /* EmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE0AFF2A018C3F00EC15EA /* EmojiPicker.swift */; };
+		DDCE0B032A018CC600EC15EA /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE0B022A018CC600EC15EA /* EmojiItem.swift */; };
 		DDECFE6C29FFCAF100D562A4 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECFE6B29FFCAF100D562A4 /* OnboardingCoordinator.swift */; };
 		DDECFE6E29FFCBDA00D562A4 /* OnboardingFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECFE6D29FFCBDA00D562A4 /* OnboardingFactoring.swift */; };
 		DDECFE7229FFCC1100D562A4 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECFE7129FFCC1100D562A4 /* WelcomeScreen.swift */; };
@@ -70,6 +85,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD142CB82A023C4E00C8040A /* FittedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittedScrollView.swift; sourceTree = "<group>"; };
+		DD142CBB2A029C0800C8040A /* Yuck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Yuck.entitlements; path = Yuck/Yuck.entitlements; sourceTree = "<group>"; };
 		DD1D83E429FFDB7100DE8B68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		DD1D83EA29FFDE8E00DE8B68 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		DD1D83EC29FFDEB200DE8B68 /* FeedFactoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFactoring.swift; sourceTree = "<group>"; };
@@ -87,6 +104,13 @@
 		DD1D841029FFF5D500DE8B68 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DD1D841329FFF74000DE8B68 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		DD1D841629FFF81100DE8B68 /* View+FirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FirstAppear.swift"; sourceTree = "<group>"; };
+		DD4A11762A012DFD004C765F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		DD4A11792A012E0B004C765F /* AuthenticationServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServicing.swift; sourceTree = "<group>"; };
+		DD4A117F2A01317E004C765F /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
+		DD4A11852A013241004C765F /* SignUpBeginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBeginRequest.swift; sourceTree = "<group>"; };
+		DD4A11882A0134AB004C765F /* SignUpBeginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBeginResponse.swift; sourceTree = "<group>"; };
+		DD4A118C2A013720004C765F /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		DD4A118F2A013731004C765F /* SignUpStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStore.swift; sourceTree = "<group>"; };
 		DD55F3E329D98B5E000EF8AF /* Yuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD55F3E629D98B5E000EF8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD55F3E829D98B5E000EF8AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +150,12 @@
 		DD55F46029D99E8A000EF8AF /* SubscriptionCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCancellable.swift; sourceTree = "<group>"; };
 		DD55F46229D9A08C000EF8AF /* TabbarControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarControllerCoordinator.swift; sourceTree = "<group>"; };
 		DD697C9B29FFD1230010C152 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		DDBF77A82A03EA540087D3F5 /* SignUpFinishRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinishRequest.swift; sourceTree = "<group>"; };
+		DDCE0AF32A01865800EC15EA /* PrimaryButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonModifier.swift; sourceTree = "<group>"; };
+		DDCE0AF52A01892F00EC15EA /* PrimaryTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldModifier.swift; sourceTree = "<group>"; };
+		DDCE0AF82A018BCA00EC15EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DDCE0AFF2A018C3F00EC15EA /* EmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPicker.swift; sourceTree = "<group>"; };
+		DDCE0B022A018CC600EC15EA /* EmojiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItem.swift; sourceTree = "<group>"; };
 		DDECFE6B29FFCAF100D562A4 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		DDECFE6D29FFCBDA00D562A4 /* OnboardingFactoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactoring.swift; sourceTree = "<group>"; };
 		DDECFE7129FFCC1100D562A4 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
@@ -140,6 +170,7 @@
 				DD55F40F29D98E70000EF8AF /* DependencyInjection in Frameworks */,
 				DD55F44729D998DD000EF8AF /* XCGLogger in Frameworks */,
 				DD1D83E129FFDA8000DE8B68 /* SFSafeSymbols in Frameworks */,
+				DD4A117D2A013153004C765F /* Networking in Frameworks */,
 				DD1D83DB29FFD1E200DE8B68 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +178,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD142CB62A023C4900C8040A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DD142CB82A023C4E00C8040A /* FittedScrollView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		DD1D83E329FFDB6A00DE8B68 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,9 +257,54 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		DD4A11782A012E05004C765F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A11792A012E0B004C765F /* AuthenticationServicing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DD4A117E2A013171004C765F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A11872A0134A6004C765F /* Response */,
+				DD4A11842A01323A004C765F /* Request */,
+				DD4A117F2A01317E004C765F /* AuthenticationRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DD4A11842A01323A004C765F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A11852A013241004C765F /* SignUpBeginRequest.swift */,
+				DDBF77A82A03EA540087D3F5 /* SignUpFinishRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DD4A11872A0134A6004C765F /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A11882A0134AB004C765F /* SignUpBeginResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		DD4A118B2A013715004C765F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A118C2A013720004C765F /* SignUpScreen.swift */,
+				DD4A118F2A013731004C765F /* SignUpStore.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		DD55F3DA29D98B5E000EF8AF = {
 			isa = PBXGroup;
 			children = (
+				DD142CBB2A029C0800C8040A /* Yuck.entitlements */,
 				DD55F40729D98C51000EF8AF /* Configurations */,
 				DD55F3E529D98B5E000EF8AF /* yuck */,
 				DD55F3E429D98B5E000EF8AF /* Products */,
@@ -251,6 +335,8 @@
 		DD55F3FA29D98BA9000EF8AF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DDCE0AFB2A018C2900EC15EA /* Components */,
+				DDCE0AF12A01864E00EC15EA /* ViewModifiers */,
 				DD55F40A29D98D67000EF8AF /* Views */,
 				DD55F40129D98C10000EF8AF /* Coordinators */,
 			);
@@ -260,6 +346,8 @@
 		DD55F3FB29D98BAD000EF8AF /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				DD4A117E2A013171004C765F /* Networking */,
+				DD4A11762A012DFD004C765F /* AuthenticationService.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -271,6 +359,7 @@
 				DD55F3E829D98B5E000EF8AF /* SceneDelegate.swift */,
 				DD55F3E629D98B5E000EF8AF /* AppDelegate.swift */,
 				DD55F41029D98E9D000EF8AF /* Configuration.swift */,
+				DDCE0AF82A018BCA00EC15EA /* Constants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -311,6 +400,7 @@
 		DD55F40029D98C07000EF8AF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DD4A11782A012E05004C765F /* Protocols */,
 				DD1D840F29FFF5D100DE8B68 /* Model */,
 			);
 			path = Domain;
@@ -459,6 +549,33 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		DDCE0AF12A01864E00EC15EA /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				DDCE0AF32A01865800EC15EA /* PrimaryButtonModifier.swift */,
+				DDCE0AF52A01892F00EC15EA /* PrimaryTextFieldModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		DDCE0AFB2A018C2900EC15EA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DD142CB62A023C4900C8040A /* Shared */,
+				DDCE0B012A018CBF00EC15EA /* Emoji */,
+				DDCE0AFF2A018C3F00EC15EA /* EmojiPicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DDCE0B012A018CBF00EC15EA /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				DDCE0B022A018CC600EC15EA /* EmojiItem.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
 		DDECFE6A29FFCAE800D562A4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +588,7 @@
 		DDECFE6F29FFCC0500D562A4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				DD4A118B2A013715004C765F /* SignUp */,
 				DDECFE7029FFCC0900D562A4 /* Welcome */,
 			);
 			path = Onboarding;
@@ -508,6 +626,7 @@
 				DD55F44629D998DD000EF8AF /* XCGLogger */,
 				DD1D83DA29FFD1E200DE8B68 /* RswiftLibrary */,
 				DD1D83E029FFDA8000DE8B68 /* SFSafeSymbols */,
+				DD4A117C2A013153004C765F /* Networking */,
 			);
 			productName = "workout-stats";
 			productReference = DD55F3E329D98B5E000EF8AF /* Yuck.app */;
@@ -542,6 +661,7 @@
 				DD55F44529D998DD000EF8AF /* XCRemoteSwiftPackageReference "XCGLogger" */,
 				DD1D83D929FFD1E200DE8B68 /* XCRemoteSwiftPackageReference "R" */,
 				DD1D83DF29FFDA8000DE8B68 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				DD4A117B2A013153004C765F /* XCRemoteSwiftPackageReference "ios-networking" */,
 			);
 			productRefGroup = DD55F3E429D98B5E000EF8AF /* Products */;
 			projectDirPath = "";
@@ -593,16 +713,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD55F43429D9921F000EF8AF /* Store.swift in Sources */,
+				DD4A118D2A013720004C765F /* SignUpScreen.swift in Sources */,
 				DD1D840329FFF1D900DE8B68 /* CreatePostScreen.swift in Sources */,
 				DD55F41A29D99067000EF8AF /* SceneCoordinating.swift in Sources */,
+				DD4A11892A0134AB004C765F /* SignUpBeginResponse.swift in Sources */,
 				DD1D840029FFF13900DE8B68 /* UserFactoring.swift in Sources */,
 				DD55F40429D98C20000EF8AF /* AppCoordinatingContaining.swift in Sources */,
 				DD55F41829D98ED8000EF8AF /* SceneConfiguration.swift in Sources */,
 				DD1D83F829FFF0D900DE8B68 /* CreatePostCoordinator.swift in Sources */,
+				DDCE0AF92A018BCA00EC15EA /* Constants.swift in Sources */,
 				DD1D83EB29FFDE8E00DE8B68 /* FeedCoordinator.swift in Sources */,
 				DD55F42E29D991B8000EF8AF /* StoreContaining.swift in Sources */,
 				DD1D841129FFF5D500DE8B68 /* Post.swift in Sources */,
+				DDCE0B002A018C3F00EC15EA /* EmojiPicker.swift in Sources */,
 				DD1D83FB29FFF0F900DE8B68 /* CreatePostFactoring.swift in Sources */,
+				DD4A11772A012DFD004C765F /* AuthenticationService.swift in Sources */,
+				DD4A11802A01317E004C765F /* AuthenticationRouter.swift in Sources */,
 				DDECFE7429FFCC2800D562A4 /* WelcomeStore.swift in Sources */,
 				DD1D840A29FFF2F000DE8B68 /* Color+AppColors.swift in Sources */,
 				DD1D83F229FFDFD900DE8B68 /* FeedStore.swift in Sources */,
@@ -613,29 +739,37 @@
 				DD55F41D29D990C3000EF8AF /* InitialSceneCoordinator.swift in Sources */,
 				DD55F42C29D9917E000EF8AF /* StoreRegistration.swift in Sources */,
 				DD55F42229D99111000EF8AF /* AppCoordinator.swift in Sources */,
+				DD4A11862A013241004C765F /* SignUpBeginRequest.swift in Sources */,
 				DD55F44929D998FF000EF8AF /* AppLogger.swift in Sources */,
 				DD55F41629D98ECC000EF8AF /* SceneConfigurationsContainer.swift in Sources */,
 				DD55F42529D99139000EF8AF /* ActiveScene.swift in Sources */,
 				DD1D83F429FFED7D00DE8B68 /* String.swift in Sources */,
+				DDBF77A92A03EA540087D3F5 /* SignUpFinishRequest.swift in Sources */,
 				DD55F41129D98E9D000EF8AF /* Configuration.swift in Sources */,
 				DD55F42829D9914F000EF8AF /* ManagerRegistration.swift in Sources */,
 				DD1D83ED29FFDEB200DE8B68 /* FeedFactoring.swift in Sources */,
 				DD55F45029D999ED000EF8AF /* ViewControllerCoordinator.swift in Sources */,
 				DDECFE6E29FFCBDA00D562A4 /* OnboardingFactoring.swift in Sources */,
 				DD55F46329D9A08C000EF8AF /* TabbarControllerCoordinator.swift in Sources */,
+				DDCE0AF62A01892F00EC15EA /* PrimaryTextFieldModifier.swift in Sources */,
 				DD55F44229D99867000EF8AF /* UserDefaultsWrapper.swift in Sources */,
 				DD55F44E29D999DE000EF8AF /* NavigationControllerCoordinator.swift in Sources */,
 				DDECFE7229FFCC1100D562A4 /* WelcomeScreen.swift in Sources */,
 				DD1D83E529FFDB7100DE8B68 /* NavigationController.swift in Sources */,
+				DD4A117A2A012E0B004C765F /* AuthenticationServicing.swift in Sources */,
 				DD55F41429D98EBC000EF8AF /* SceneManifest.swift in Sources */,
+				DDCE0B032A018CC600EC15EA /* EmojiItem.swift in Sources */,
 				DD1D841729FFF81100DE8B68 /* View+FirstAppear.swift in Sources */,
 				DD55F40C29D98D98000EF8AF /* Coordinator.swift in Sources */,
 				DD55F42A29D9915F000EF8AF /* ServiceRegistration.swift in Sources */,
+				DDCE0AF42A01865800EC15EA /* PrimaryButtonModifier.swift in Sources */,
+				DD4A11902A013731004C765F /* SignUpStore.swift in Sources */,
 				DD55F3E729D98B5E000EF8AF /* AppDelegate.swift in Sources */,
 				DD55F43029D991EB000EF8AF /* UISceneDelegate+AppCoordinator.swift in Sources */,
 				DD55F3E929D98B5E000EF8AF /* SceneDelegate.swift in Sources */,
 				DD1D840629FFF1E900DE8B68 /* CreatePostStore.swift in Sources */,
 				DD55F45729D99BAB000EF8AF /* PresentationType.swift in Sources */,
+				DD142CB92A023C4E00C8040A /* FittedScrollView.swift in Sources */,
 				DD1D841429FFF74000DE8B68 /* PostView.swift in Sources */,
 				DD55F45F29D99E83000EF8AF /* EventEmitting.swift in Sources */,
 				DD1D83FE29FFF12300DE8B68 /* UserCoordinator.swift in Sources */,
@@ -799,9 +933,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Yuck/Yuck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J8L663CT57;
+				DEVELOPMENT_TEAM = EAVQTDVRT7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = yuck/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Yuck;
@@ -812,14 +947,13 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ollkorrect.yuck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.passkey.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -832,6 +966,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Yuck/Yuck.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J8L663CT57;
@@ -845,14 +980,13 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ollkorrect.yuck;
+				PRODUCT_BUNDLE_IDENTIFIER = com.passkey.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -900,6 +1034,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		DD4A117B2A013153004C765F /* XCRemoteSwiftPackageReference "ios-networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/strvcom/ios-networking/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 		DD55F40D29D98E70000EF8AF /* XCRemoteSwiftPackageReference "ios-dependency-injection" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/strvcom/ios-dependency-injection";
@@ -932,6 +1074,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD1D83DF29FFDA8000DE8B68 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		DD4A117C2A013153004C765F /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD4A117B2A013153004C765F /* XCRemoteSwiftPackageReference "ios-networking" */;
+			productName = Networking;
 		};
 		DD55F40E29D98E70000EF8AF /* DependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;

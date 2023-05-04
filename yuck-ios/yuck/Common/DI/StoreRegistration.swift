@@ -21,5 +21,9 @@ enum StoreRegistration {
         container.register(in: .new) { _ in
             CreatePostStore()
         }
+        
+        container.register(in: .new) { container in
+            SignUpStore(authenticationService: container.resolve(type: AuthenticationServicing.self))
+        }
     }
 }

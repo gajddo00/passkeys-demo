@@ -9,6 +9,10 @@ import DependencyInjection
 
 enum ServiceRegistration {
     static func registerDependencies(to container: Container) {
-        
+        container.autoregister(
+            type: AuthenticationServicing.self,
+            in: .new,
+            initializer: AuthenticationService.init
+        )
     }
 }

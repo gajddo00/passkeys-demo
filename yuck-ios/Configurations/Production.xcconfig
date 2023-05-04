@@ -5,5 +5,7 @@
 //  Created by Dominika Gajdová on 02.04.2023.
 //
 
-APP_BUNDLE_NAME = Workout_Stats
-APP_BUNDLE_IDENTIFIER = com.bonesystems.workout-stats
+APP_BUNDLE_NAME = yuck
+APP_BUNDLE_IDENTIFIER = com.ollkorrect.yuck
+APP_AUTH_DOMAIN = localhost
+API_BASE_URL = 

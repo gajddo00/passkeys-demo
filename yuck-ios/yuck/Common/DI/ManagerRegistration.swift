@@ -6,9 +6,12 @@
 //
 
 import DependencyInjection
+import Networking
 
 enum ManagerRegistration {
     static func registerDependencies(to container: Container) {
-        
+        container.register(type: APIManaging.self, in: .shared) { _ in
+            APIManager()
+        }
     }
 }
