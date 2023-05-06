@@ -11,5 +11,6 @@ import WebAuthn
 struct SignUpFinishRequest: Decodable {
     let challenge: String
     let userId: String
+    let username: String
     let credential: RegistrationCredential
 }

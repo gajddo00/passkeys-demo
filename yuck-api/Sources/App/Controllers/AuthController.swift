@@ -65,9 +65,7 @@ extension AuthController {
             throw Abort(.badRequest, reason: "Username already taken.")
         }
         
-        let user = User(username: username)
-        try await user.create(on: req.db)
-        
+        let user = User(id: UUID(), username: username)
         return try req.webAuthn.beginRegistration(user: user, attestation: .none)
     }
     
@@ -93,6 +91,9 @@ extension AuthController {
                 return existingCredential == nil
             }
         )
+        
+        try await User(id: userId, username: request.username)
+            .save(on: req.db)
                
         try await WebAuthnCredential(
             from: credential,
