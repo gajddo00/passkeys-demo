@@ -7,6 +7,9 @@
 
 import Vapor
 import WebAuthn
+import DependencyInjection
+
+private let diContainer = Container()
 
 extension Application {
     struct WebAuthnKey: StorageKey {
@@ -23,6 +26,10 @@ extension Application {
         set {
             storage[WebAuthnKey.self] = newValue
         }
+    }
+    
+    var container: Container {
+        diContainer
     }
 }
 

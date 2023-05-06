@@ -11,7 +11,9 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor.git", from: "4.76.0"),
         .package(url: "https://github.com/vapor/fluent.git", from: "4.8.0"),
         .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0"),
-        .package(url: "https://github.com/swift-server/webauthn-swift.git", branch: "main")
+        .package(url: "https://github.com/swift-server/webauthn-swift.git", branch: "main"),
+        .package(url: "https://github.com/vapor/jwt.git", from: "4.0.0"),
+        .package(url: "https://github.com/strvcom/ios-dependency-injection", from: "1.0.3")
     ],
     targets: [
         .executableTarget(
@@ -20,7 +22,9 @@ let package = Package(
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
                 .product(name: "Vapor", package: "vapor"),
-                .product(name: "WebAuthn", package: "webauthn-swift")
+                .product(name: "WebAuthn", package: "webauthn-swift"),
+                .product(name: "JWT", package: "jwt"),
+                .product(name: "DependencyInjection", package: "ios-dependency-injection")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

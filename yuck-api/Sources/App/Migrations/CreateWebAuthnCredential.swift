@@ -9,16 +9,16 @@ import Fluent
 
 struct CreateWebAuthnCredential: AsyncMigration {
     func prepare(on database: Database) async throws {
-        try await database.schema("webauthn_credentials")
+        try await database.schema(WebAuthnCredential.schema)
             .field("id", .string, .identifier(auto: false))
             .field("public_key", .string, .required)
-            .field("current_sign_count", .uint32, .required)
+            .field("current_sign_count", .int32, .required)
             .field("user_id", .uuid, .required, .references("users", "id"))
             .unique(on: "id")
             .create()
     }
 
     func revert(on database: Database) async throws {
-        try await database.schema("webauthn_credentials").delete()
+        try await database.schema(WebAuthnCredential.schema).delete()
     }
 }

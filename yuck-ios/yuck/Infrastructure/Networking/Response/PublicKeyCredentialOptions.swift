@@ -8,7 +8,7 @@
 import Foundation
 
 // swiftlint:disable identifier_name
-struct SignUpBeginResponse: Codable {
+struct PublicKeyCredentialOptions: Codable {
     let rp: Rp
     let timeout: Int
     let attestation: String
