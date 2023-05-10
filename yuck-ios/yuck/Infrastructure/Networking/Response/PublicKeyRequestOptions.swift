@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct PublicKeyRequestOptions: Decodable {
+    let challenge: String
+    let timeout: TimeInterval?
+    let rpId: String?
+    let allowCredentials: [PublicKeyCredentialDescriptor]?
+    
+    struct PublicKeyCredentialDescriptor: Decodable {
+        let type: String
+        let id: String
+    }
+}

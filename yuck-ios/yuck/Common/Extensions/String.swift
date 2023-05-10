@@ -22,4 +22,15 @@ extension String {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    func fromBase64() -> String? {
+        guard let data = Data(base64Encoded: self) else {
+            return nil
+        }
+        return String(data: data, encoding: .utf8)
+    }
+    
+    func fromBase64() -> Data? {
+        Data(base64Encoded: self)
+    }
 }

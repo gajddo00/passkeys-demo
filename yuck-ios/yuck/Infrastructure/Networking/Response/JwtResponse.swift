@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct JwtResponse: Decodable {
+    let accessToken: String
+    let tokenType: String
+    let refreshToken: String
+    let expiresIn: Double
+}

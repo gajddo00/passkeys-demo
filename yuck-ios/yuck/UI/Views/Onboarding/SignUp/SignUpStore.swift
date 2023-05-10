@@ -8,12 +8,15 @@
 import Foundation
 import Combine
 
+@MainActor
 final class SignUpStore: Store, ObservableObject, SubscriptionCancellable {
     typealias State = SignUpState
     typealias Action = SignUpAction
         
     // MARK: Public
     @Published private(set) var state: SignUpState = .init()
+    @Published var username: String = ""
+
     var cancellables: Set<AnyCancellable> = []
     
     // MARK: Private
@@ -30,9 +33,7 @@ final class SignUpStore: Store, ObservableObject, SubscriptionCancellable {
             Task { await initiateSignUp() }
             
         case let .usernameDidChange(value):
-            if value.count < Constants.usernameCharacterLimit {
-                state.username = value
-            }
+            usernameDidChange(value)
             
         case let .emojiDidChange(value):
             state.emoji = value
@@ -44,9 +45,39 @@ final class SignUpStore: Store, ObservableObject, SubscriptionCancellable {
 private extension SignUpStore {
     func initiateSignUp() async {
         do {
-            try await authenticationService.singUpWith(username: state.username)
+            if state.mode == .signup {
+                _ = try await authenticationService.singUpWith(username: state.username)
+                usernameDidChange(state.username)
+            } else {
+                let result = try await authenticationService.signInWith(username: state.username)
+                if case let .signIn(jwt) = result {
+                    // Save JWT to keychain and sign user in
+                    logger.debug(jwt)
+                }
+            }
         } catch {
             logger.debug(error)
+        }
+    }
+    
+    func usernameDidChange(_ value: String) {
+        if value.isEmpty {
+            state = state
+                .updating(\.username, with: value)
+                .updating(\.mode, with: .signin)
+        } else if value.count < Constants.usernameCharacterLimit {
+            Task {
+                let userExists = await authenticationService.userExists(username: username)
+                if userExists {
+                    state = state
+                        .updating(\.username, with: value)
+                        .updating(\.mode, with: .signin)
+                } else {
+                    state = state
+                        .updating(\.username, with: value)
+                        .updating(\.mode, with: .signup)
+                }
+            }
         }
     }
 }
@@ -71,6 +102,11 @@ enum SignUpAction {
 
 // MARK: State
 struct SignUpState: StoreState {
+    enum Mode {
+        case signup, signin
+    }
+        
     var username: String = ""
     var emoji: String = ""
+    var mode: Mode = .signin
 }

@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 protocol AuthenticationServicing {
-    func singUpWith(username: String) async throws
+    var authenticationResult: AnyPublisher<AuthenticationResult, Error> { get }
+    
+    func singUpWith(username: String) async throws -> AuthenticationResult
+    func signInWith(username: String) async throws -> AuthenticationResult
+    func userExists(username: String) async -> Bool
 }

@@ -48,29 +48,38 @@ extension SignUpScreen {
 private extension SignUpScreen {
     @ViewBuilder func content() -> some View {
         VStack(spacing: 30) {
-            username()
+            usernameInput()
             
-            emojiPicker()
+            if store.state.mode == .signup {
+                emojiPicker()
+            }
             
             Spacer()
             
-            Button(RString.signupButtonTitle()) {
+            Button(store.state.mode == .signup ? RString.signupButtonTitle() : RString.signinButtonTitle()) {
                 store.send(action: .didTapSignUp)
             }
             .primaryButtonGray()
+            .disabled(store.state.username.isEmpty)
         }
     }
     
-    @ViewBuilder func username() -> some View {
+    @ViewBuilder func usernameInput() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(RString.signupUsernameTitle())
+            Text(store.state.mode == .signup ? RString.signupUsernameTitle() : RString.signinUsernameTitle())
                 .font(.body)
             
-            Text(RString.signupUsernameTip())
-                .font(.caption2)
+            if store.state.mode == .signup {
+                Text(RString.signupUsernameTip())
+                    .font(.caption2)
+            }
             
-            TextField(RString.generalUsername(), text: store.binding(for: \.username, send: { .usernameDidChange($0) }))
-            .primaryTextField()
+            TextField(RString.generalUsername(), text: $store.username)
+                .onReceive(store.$username
+                    .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)) { newValue in
+                        store.send(action: .usernameDidChange(newValue))
+                }
+                .primaryTextField()
         }
         .padding(.horizontal, 20)
     }

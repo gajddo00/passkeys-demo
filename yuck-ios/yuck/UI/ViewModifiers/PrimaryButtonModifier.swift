@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PrimaryButtonModifier: ViewModifier {
+    @Environment(\.isEnabled) var isEnabled
+    
     let backgroundColor: Color
     let foregroundColor: Color
     
@@ -18,8 +20,8 @@ struct PrimaryButtonModifier: ViewModifier {
             .frame(maxHeight: 34)
             .padding(.horizontal, 50)
             .padding(.vertical, 5)
-            .foregroundColor(foregroundColor)
-            .background(backgroundColor)
+            .foregroundColor(isEnabled ? foregroundColor : foregroundColor.opacity(0.5))
+            .background(isEnabled ? backgroundColor : backgroundColor.opacity(0.5))
             .cornerRadius(12)
             .padding(.bottom, 15)
     }

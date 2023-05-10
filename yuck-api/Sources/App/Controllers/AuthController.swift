@@ -51,7 +51,6 @@ extension AuthController {
 
 // MARK: Registration
 extension AuthController {
-    // Two endpoints are necessary to support PassKeys/FIDO.
     // 1. Create options for the credential provider creation with generated challenge.
     func signUpBegin(req: Request) async throws -> PublicKeyCredentialCreationOptions {
         guard let username = req.query[String.self, at: "username"] else {
@@ -81,6 +80,7 @@ extension AuthController {
             throw AuthenticationError.invalidUserId
         }
         
+        // Verify and get the final fido credential that will be associated with the account.
         let credential = try await req.webAuthn.finishRegistration(
             challenge: EncodedBase64(request.challenge),
             credentialCreationData: request.credential,
@@ -92,6 +92,7 @@ extension AuthController {
             }
         )
         
+        // Save user and their fido credential to database.
         try await User(id: userId, username: request.username)
             .save(on: req.db)
                
@@ -115,6 +116,8 @@ extension AuthController {
             }
 
             let credentials = try await user.$credentials.get(on: req.db)
+            // User can have multiple credentials for one app,
+            // so let's only allow those that actually match the username.
             allowCredentials = credentials.map {
                 let idData = [UInt8](URLEncodedBase64($0.id!).urlDecoded.decoded!)
                 return PublicKeyCredentialDescriptor(type: "public-key", id: idData)

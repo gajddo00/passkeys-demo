@@ -21,7 +21,10 @@
 "signup.username.title" = "Pick a username that will best describe you.";
 "signup.username.tip" = "Tip: Pick a totally random thing that comes to your mind. Life is too short to be thinking about usernames. You can change it any time later.";
 "signup.emoji.title" = "Pick an emoji you can relate to.";
+"signin.button.title" = "Sign me in!";
+"signin.username.title" = "Enter your username";
 
+"signin.error.unsuccessful" = "Sorry the sign up was not successful.";
 
 // MARK: Feed
 "feed.title" = "Feed";

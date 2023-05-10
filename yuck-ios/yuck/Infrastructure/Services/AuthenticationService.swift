@@ -11,11 +11,15 @@ import Networking
 import Combine
 
 final class AuthenticationService: NSObject {
-    private let domain = Configuration.default.authDomain
+    struct SignUpData {
+        let challenge: Data
+        let userId: String
+        let username: String
+    }
     
+    private let domain = Configuration.default.authDomain
     private let apiManager: APIManaging
     private var signUpData: SignUpData?
-    
     private let resultSubject = PassthroughSubject<AuthenticationResult, Error>()
     
     init(apiManager: APIManaging) {
@@ -50,7 +54,8 @@ extension AuthenticationService: AuthenticationServicing {
             throw AuthenticationError.invalidChallenge
         }
         
-        signUpData = .init(challenge: challenge, userId: response.user.id)
+        // Temporarily save metadata that are needed to finish registration.
+        signUpData = .init(challenge: challenge, userId: response.user.id, username: username)
         
         let registrationRequest = publicKeyCredentialProvider.createCredentialRegistrationRequest(
             challenge: challenge,
@@ -58,6 +63,7 @@ extension AuthenticationService: AuthenticationServicing {
             userID: Data(response.user.id.utf8)
         )
         
+        // Trigger native PassKeys UI in the most simple version.
         let authController = ASAuthorizationController(authorizationRequests: [registrationRequest])
         authController.delegate = self
         authController.presentationContextProvider = self
@@ -77,13 +83,16 @@ extension AuthenticationService: AuthenticationServicing {
             throw AuthenticationError.invalidChallenge
         }
         
-        signUpData = .init(challenge: challenge, userId: "")
+        signUpData = .init(challenge: challenge, userId: "", username: username)
         
         let assertionRequest = publicKeyCredentialProvider.createCredentialAssertionRequest(challenge: challenge)
+        // User can have multiple credentials for one app,
+        // so let's only allow those that actually match the username.
         assertionRequest.allowedCredentials = response.allowCredentials?
             .compactMap { $0.id.fromBase64() }
             .map { ASAuthorizationPlatformPublicKeyCredentialDescriptor(credentialID: $0) } ?? []
         
+        // Trigger native PassKeys UI in the most simple version.
         let authController = ASAuthorizationController(authorizationRequests: [assertionRequest])
         authController.delegate = self
         authController.presentationContextProvider = self
@@ -107,6 +116,7 @@ private extension AuthenticationService {
         let request = SignUpFinishRequest(
             challenge: signUpData.challenge.base64EncodedString(),
             userId: signUpData.userId,
+            username: signUpData.username,
             credential: .init(
                 id: credential.credentialID.base64EncodedString(),
                 rawId: credential.credentialID,
@@ -149,12 +159,19 @@ private extension AuthenticationService {
         let response: JwtResponse = try await apiManager.request(AuthenticationRouter.signInFinish(request))
         resultSubject.send(.signIn(response))
     }
-}
-
-// MARK: Presentation delegate
-extension AuthenticationService: ASAuthorizationControllerPresentationContextProviding {
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        ASPresentationAnchor()
+    
+    func handleAuthorizationResult(with action: @escaping () async throws -> Void) {
+        Task {
+            do {
+                try await action()
+            } catch let error as AuthenticationError {
+                logger.debug(error)
+                resultSubject.send(.error(error))
+            } catch let error as NetworkError {
+                logger.debug(error)
+                resultSubject.send(.error(.apiError(error.localizedDescription)))
+            }
+        }
     }
 }
 
@@ -166,26 +183,18 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
         switch authorization.credential {
         case let credentialRegistration as ASAuthorizationPlatformPublicKeyCredentialRegistration:
             // Registration result.
-            Task {
-                do {
-                    try await finishSignUp(credential: credentialRegistration)
-                } catch {
-                    logger.debug(error)
-                    resultSubject.send(.error(error))
-                }
+            handleAuthorizationResult { [weak self] in
+                try await self?.finishSignUp(credential: credentialRegistration)
             }
             
         case let credentialAssertion as ASAuthorizationPlatformPublicKeyCredentialAssertion:
             // Authentication result.
-            Task {
-                do {
-                    try await finishSignIn(assertion: credentialAssertion)
-                } catch {
-                    logger.debug(error)
-                }
+            handleAuthorizationResult { [weak self] in
+                try await self?.finishSignIn(assertion: credentialAssertion)
             }
             
         case _ as ASPasswordCredential:
+            // Not supported.
             break
             
         default:
@@ -195,9 +204,18 @@ extension AuthenticationService: ASAuthorizationControllerDelegate {
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         logger.debug("❌ AUTHORIZATION DID FAIL: \(error)")
+        resultSubject.send(.error(.apiError(error.localizedDescription)))
     }
 }
 
+// MARK: Presentation delegate
+extension AuthenticationService: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        ASPresentationAnchor()
+    }
+}
+
+// MARK: Mock
 extension AuthenticationService {
     static let mock = AuthenticationService(apiManager: APIManager())
 }
