@@ -7,5 +7,5 @@
 
 APP_BUNDLE_NAME = yuck
 APP_BUNDLE_IDENTIFIER = com.ollkorrect.yuck
-APP_AUTH_DOMAIN = 369e-176-102-152-228.ngrok-free.app
-API_BASE_URL = https:/$()/369e-176-102-152-228.ngrok-free.app/api
+APP_AUTH_DOMAIN = 9b7e-213-210-173-161.ngrok-free.app
+API_BASE_URL = https:/$()/9b7e-213-210-173-161.ngrok-free.app/api

@@ -12,7 +12,7 @@ enum AuthenticationError: LocalizedError {
 }
 
 struct AuthController: RouteCollection {
-    private let domain = "369e-176-102-152-228.ngrok-free.app"
+    private let domain = Constants.relyingPartyID
     private let displayName = "Yuck"
     
     private let jwtService: JwtServicing

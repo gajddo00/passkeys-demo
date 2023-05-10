@@ -27,8 +27,8 @@ public func configure(_ app: Application) async throws {
     app.webAuthn = WebAuthnManager(
         config: WebAuthnConfig(
             relyingPartyDisplayName: "Yuck API",
-            relyingPartyID: "369e-176-102-152-228.ngrok-free.app",
-            relyingPartyOrigin: "https://369e-176-102-152-228.ngrok-free.app"
+            relyingPartyID: Constants.relyingPartyID,
+            relyingPartyOrigin: Constants.relyingPartyOrigin
         )
     )
     
