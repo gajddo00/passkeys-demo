@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  workout-stats
+
+  Created by Dominika Gajdová on 02.04.2023.
+  
+*/
+
+"general.name" = "Passkeys Demo";
+"general.username" = "Username";
+
+// MARK: Sign up
+"signup.button.title" = "Sign me up!";
+"signup.username.title" = "Pick a username that best describes you.";
+"signup.username.tip" = "Tip: Pick a totally random thing that comes to your mind. Life is too short to be thinking about usernames. You can change it any time later.";
+"signup.emoji.title" = "Pick an emoji you can relate to.";
+"signin.button.title" = "Sign me in!";
+"signin.username.title" = "Enter your username";
+"signin.error.unsuccessful" = "Sorry the sign up was not successful.";
