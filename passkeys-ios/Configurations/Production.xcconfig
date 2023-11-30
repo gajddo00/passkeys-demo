@@ -1,0 +1,11 @@
+//
+//  Production.xcconfig
+//  workout-stats
+//
+//  Created by Dominika Gajdová on 02.04.2023.
+//
+
+APP_BUNDLE_NAME = passkeys-demo
+APP_BUNDLE_IDENTIFIER = com.passkey.demo
+APP_AUTH_DOMAIN = localhost
+API_BASE_URL = localhost
