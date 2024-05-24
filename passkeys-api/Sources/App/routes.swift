@@ -5,7 +5,7 @@ func routes(_ app: Application) throws {
     try app.register(collection: AuthenticationController(jwtService: app.container.resolve(type: JwtServicing.self)))
     
     app.get(".well-known", "apple-app-site-association") { req -> Response in
-        let appIdentifier = "EAVQTDVRT7.com.passkey.demo"
+        let appIdentifier = Constants.appIdentifier
         let responseString =
             """
             {

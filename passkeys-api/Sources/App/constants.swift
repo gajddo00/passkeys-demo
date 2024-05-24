@@ -8,6 +8,7 @@
 import Foundation
 
 enum Constants {
-    static let relyingPartyOrigin = "https://domain"
-    static let relyingPartyID = "domain"
+    static let relyingPartyOrigin = "https://9aff-62-168-3-170.ngrok-free.app/"
+    static let relyingPartyID = "9aff-62-168-3-170.ngrok-free.app"
+    static let appIdentifier = "EAVQTDVRT7.com.passkey.demo"
 }

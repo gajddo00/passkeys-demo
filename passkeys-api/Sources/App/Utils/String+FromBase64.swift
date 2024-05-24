@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  String+FromBase64.swift
+//
 //
 //  Created by Dominika Gajdová on 04.05.2023.
 //
