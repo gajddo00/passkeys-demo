@@ -108,8 +108,8 @@ private extension AuthenticationService {
     func finishSignUp(credential: ASAuthorizationPlatformPublicKeyCredentialRegistration) async throws {
         guard let signUpData else {
             throw AuthenticationError.invalidChallenge
-        }
-        
+        }        
+
         guard let attestation = credential.rawAttestationObject else {
             throw AuthenticationError.invalidAttestation
         }
